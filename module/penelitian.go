@@ -43,7 +43,7 @@ func InsertPenelitian(judul string, institusi string, penulis string, datetime p
 
 func GetAllPenelitian() []interface{} {
 	var penelitians []interface{}
-	collection := MongoConnect("ats").Collection("penelitian")
+	collection := MongoConnect("ATS").Collection("penelitian")
 	filter := bson.M{}
 	cursor, err := collection.Find(context.TODO(), filter)
 	if err != nil {
