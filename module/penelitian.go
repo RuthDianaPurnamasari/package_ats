@@ -3,15 +3,15 @@ package package_ats
 import (
 	"context"
 	"fmt"
+	"os"
+
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"go.mongodb.org/mongo-driver/bson"
-	"os"
 )
 
 var MongoString string = os.Getenv("MONGOSTRING")
-
 
 func MongoConnect(dbname string) (db *mongo.Database) {
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(MongoString))
@@ -30,13 +30,13 @@ func InsertOneDoc(db string, collection string, doc interface{}) (insertedID int
 }
 func InsertPenelitian(judul string, institusi string, penulis string, datetime primitive.DateTime, ringkasan string, biodata map[string]interface{}) (insertedID interface{}) {
 	var penelitian = map[string]interface{}{
-		"_id":        primitive.NewObjectID(),
-		"judul":      judul,
-		"institusi":  institusi,
-		"penulis":    penulis,
-		"datetime":   datetime,
-		"ringkasan":  ringkasan,
-		"biodata":    biodata,
+		"_id":       primitive.NewObjectID(),
+		"judul":     judul,
+		"institusi": institusi,
+		"penulis":   penulis,
+		"datetime":  datetime,
+		"ringkasan": ringkasan,
+		"biodata":   biodata,
 	}
 	return InsertOneDoc("ATS", "penelitian", penelitian)
 }
