@@ -13,20 +13,20 @@ import (
 func TestInsertPenelitian(t *testing.T) {
 
 	insertedID := module.InsertPenelitian(
-		"Dampak dari Krisis Air Bersih",
-		"Universitas Ganjil Genap",
-		"Markonah",
+		"Sistem Irigasi Pintar Berbasis Internet of Things (IoT) untuk Pertanian Modern",
+		"Universitas Gadjah Mada",
+		"Changsub",
 		primitive.NewDateTimeFromTime(time.Now()),
-		"Dengan menggunakan pendekatan interdisipliner, menyadarkan masyarakat akan isu air bersih dan perlunya tindakan yang cepat dan efektif untuk menjaga sumber daya air yang vital bagi kehidupan dan keberlanjutan lingkungan",
+		"Pengembangan sistem irigasi otomatis menggunakan sensor kelembapan tanah dan kontroler IoT untuk meningkatkan efisiensi penggunaan air di lahan pertanian.",
 		model.Peneliti{ 
-			Nama :        "Bambang Sugiono",
-		TanggalLahir:  "20 10 1990",
-		Alamat:         "Zimbabwe",
-		Institusi:      "Universitas Ganjil Genap",
-		Bidang_Studi:  "Kajian Lingkungan atau Kajian Sumber Daya Air",
+			Nama :        "Changsub",
+		TanggalLahir:  "21 11 2001",
+		Alamat:         "Jalan Bulaksumur, Yogyakarta",
+		Institusi:      "Universitas Gadjah Mada",
+		Bidang_Studi:  "Teknik Pertanian",
 		Publikasi:      model.Publikasi{
-			Judul:         "Dampak dari Krisis Air Bersih",
-			Penulis:       "Markonah",
+			Judul:         "Sistem Irigasi Pintar Berbasis Internet of Things (IoT) untuk Pertanian Modern",
+			Penulis:       "Changsub",
 			Category:      "Jurnal",	
 		},
 		},
