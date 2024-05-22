@@ -40,15 +40,6 @@ func TestInsertPenelitian(t *testing.T) {
 
 func TestGetAllPenelitian(t *testing.T) {
 	penelitians := module.GetAllPenelitian()
-	// if err != nil {
-	// 	t.Errorf("Error getting all Penelitian: %v", err)
-	// 	return
-	// }
-
-	// fmt.Println("All Penelitian:")
-	// for _, penelitian := range penelitians {
-	// 	fmt.Println(penelitian)
-	// }
 	fmt.Println(penelitians)
 }
 
