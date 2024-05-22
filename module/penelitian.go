@@ -45,9 +45,9 @@ func InsertPenelitian(judul string, institusi string, penulis string, datetime p
 }
 
 func GetAllPenelitian() (data []model.Penelitian) {
-	karyawan := MongoConnect("ATS").Collection("penelitian")
+	collection := MongoConnect("ATS").Collection("penelitian")
 	filter := bson.M{}
-	cursor, err := karyawan.Find(context.TODO(), filter)
+	cursor, err := collection.Find(context.TODO(), filter)
 	if err != nil {
 		fmt.Println("GetALLData :", err)
 	}
