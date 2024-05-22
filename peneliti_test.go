@@ -5,36 +5,50 @@ import (
 	"testing"
 	"time"
 
+	"github.com/RuthDianaPurnamasari/package_ats/model"
 	"github.com/RuthDianaPurnamasari/package_ats/module"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func TestInsertPenelitian(t *testing.T) {
-	biodata := map[string]interface{}{
-		"nama":          "Bambang Sugiono",
-		"tanggal_lahir": "20 10 1990",
-		"alamat":        "Zimbabwe",
-		"institusi": 	 "Universitas Ganjil Genap",
-		"bidang_studi":	 "Kajian Lingkungan atau Kajian Sumber Daya Air",
-		"publikasi":	 "Publikasi Peneliti",
-		"judul":	     "Dampak dari Krisis Air Bersih",
-		"tanggal":		 "15 10 2002",
-		"penulis":	     "Markonah",
-		"category":	     "Jurnal",
-	}
 
-	insertedID := package_ats.InsertPenelitian(
+	insertedID := module.InsertPenelitian(
 		"Dampak dari Krisis Air Bersih",
 		"Universitas Ganjil Genap",
 		"Markonah",
 		primitive.NewDateTimeFromTime(time.Now()),
-		"Dengan menggunakan pendekatan interdisipliner,menyadarkan masyarakat akan isu air bersih dan perlunya tindakan yang cepat dan efektif untuk menjaga sumber daya air yang vital bagi kehidupan dan keberlanjutan lingkungan",
-		biodata,
+		"Dengan menggunakan pendekatan interdisipliner, menyadarkan masyarakat akan isu air bersih dan perlunya tindakan yang cepat dan efektif untuk menjaga sumber daya air yang vital bagi kehidupan dan keberlanjutan lingkungan",
+		model.Peneliti{ 
+			Nama :        "Bambang Sugiono",
+		TanggalLahir:  "20 10 1990",
+		Alamat:         "Zimbabwe",
+		Institusi:      "Universitas Ganjil Genap",
+		Bidang_Studi:  "Kajian Lingkungan atau Kajian Sumber Daya Air",
+		Publikasi:      model.Publikasi{
+			Judul:         "Dampak dari Krisis Air Bersih",
+			Penulis:       "Markonah",
+			Category:      "Jurnal",	
+		},
+		},
 	)
-	fmt.Println("Inserted Penelitian ID:", insertedID)
+	// if err != nil {
+	// 	t.Errorf("Error inserting Penelitian: %v", err)
+	// 	return
+	// }
+	fmt.Println(insertedID)
 }
 
 func TestGetAllPenelitian(t *testing.T) {
-	penelitians := package_ats.GetAllPenelitian()
-	fmt.Println("All Penelitian:", penelitians)
+	penelitians := module.GetAllPenelitian()
+	// if err != nil {
+	// 	t.Errorf("Error getting all Penelitian: %v", err)
+	// 	return
+	// }
+
+	// fmt.Println("All Penelitian:")
+	// for _, penelitian := range penelitians {
+	// 	fmt.Println(penelitian)
+	// }
+	fmt.Println(penelitians)
 }
+

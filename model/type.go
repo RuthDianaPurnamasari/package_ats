@@ -1,4 +1,4 @@
-package package_ats
+package model
 
 import (
 	"time"
@@ -18,14 +18,14 @@ type Peneliti struct {
 
 // Publikasi adalah struktur data untuk menyimpan informasi tentang publikasi.
 type Publikasi struct {
-	Judul    string `bson:"judul,omitempty" json:"judul,omitempty"`
+	Judul    string    `bson:"judul,omitempty" json:"judul,omitempty"`
 	Tanggal  time.Time `bson:"tanggal,omitempty" json:"tanggal,omitempty"`
-	Penulis  string `bson:"penulis,omitempty" json:"penulis,omitempty"`
-	Category string `bson:"category,omitempty" json:"category,omitempty"`
+	Penulis  string    `bson:"penulis,omitempty" json:"penulis,omitempty"`
+	Category string    `bson:"category,omitempty" json:"category,omitempty"`
 }
 
 // penelitian adalah struktur data untuk menyimpan informasi tentang penelitian.
-type penelitian struct {
+type Penelitian struct {
 	ID        primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
 	Judul     string             `bson:"judul,omitempty" json:"judul,omitempty"`
 	Institusi string             `bson:"institusi,omitempty" json:"institusi,omitempty"`

@@ -1,4 +1,4 @@
-package package_ats
+package module
 
 import (
 	"github.com/aiteung/atdb"
@@ -6,7 +6,7 @@ import (
 
 var MongoInfo = atdb.DBInfo{
 	DBString: MongoString,
-	DBName:   "ATS",
+	DBName:   "ATS",		
 }
 
 var MongoConn = atdb.MongoConnect(MongoInfo)
